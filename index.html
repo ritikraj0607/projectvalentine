@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Love Not Found 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Instagram Icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+      transition: background 0.5s ease;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 0 auto 18px;
+      line-height: 1.7;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 560px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: white;
+      color: #ff4f7a;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      margin: 8px;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .social {
+      font-size: 38px;
+      color: white;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      margin: 15px 0;
+    }
+
+    .social:hover {
+      transform: scale(1.35) rotate(12deg);
+      color: #ffe0ea;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px dashed white;
+      color: white;
+      font-size: 14px;
+      padding: 8px 18px;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Dark Mode -->
+<button class="toggle" onclick="toggleMode()">🌙</button>
+
+<!-- HERO -->
+<section class="fade-in">
+  <h1>404 Love Not Found 💔</h1>
+  <p>Server is up. Feelings are loading… please wait.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="fade-in">
+  <div class="card">
+    <h2>👤 About Me</h2>
+    <p>
+      Hi, I’m <b>Ritik Raj</b> — a human being disguised as a developer.
+    </p>
+    <p>
+      I write code, drink water occasionally, and believe
+      personality > frameworks.
+    </p>
+  </div>
+</section>
+
+<!-- MAX FUNNY SPECS -->
+<section class="fade-in">
+  <div class="card">
+    <h2>💖My Specs💖</h2>
+
+    <p>💻 <b>HTML & CSS</b><br>
+      Can center a div without Googling.  
+      Still Googles. ⭐⭐⭐⭐☆
+    </p>
+
+    <p>⚙️ <b>JavaScript</b><br>
+      Writes code that works.  
+      No idea why it works. ⭐⭐⭐☆☆
+    </p>
+
+    <p>🐛 <b>Bug Fixing</b><br>
+      1. Create bug  
+      2. Panic  
+      3. Fix bug  
+      4. Forget how ⭐⭐⭐⭐☆
+    </p>
+
+    <p>🧠 <b>Problem Solving</b><br>
+      Solves problems at 2 AM that didn’t exist at 1:59 AM ⭐⭐⭐⭐☆
+    </p>
+
+    <p>💬 <b>Communication Skills</b><br>
+      Explains code clearly, emotions moderately, life poorly ⭐⭐⭐⭐⭐
+    </p>
+
+    <p>☕ <b>Coffee Dependency</b><br>
+      Without coffee: console.log(undefined) ☕☕☕☕☕
+    </p>
+
+    <p>💖 <b>Emotional Availability</b><br>
+      Available, stable, and open to feedback (nicely) ⭐⭐⭐⭐☆
+    </p>
+
+    <p>🚩 <b>Red Flags</b><br>
+      Says “just one more bug” and disappears for 3 hours
+    </p>
+  </div>
+</section>
+
+<!-- COMPATIBILITY -->
+<section class="fade-in">
+  <div class="card">
+    <h2>💘 Compatibility Test</h2>
+    <p>Powered by vibes, randomness, and mild delusion.</p>
+    <button onclick="checkLove()">Run Test</button>
+    <p id="result"></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="fade-in">
+  <div class="card">
+    <h2>📞 Contact Me</h2>
+    <p>If you made it this far, we’re basically married.</p>
+
+    <a href="https://www.instagram.com/ritikraj_0607"
+       target="_blank"
+       class="social">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <br>
+
+    <button class="copy-btn" onclick="copyInsta()">
+      Copy Instagram Username
+    </button>
+  </div>
+</section>
+
+<footer>
+  Deployed emotionally. Maintained occasionally.
+</footer>
+
+<script>
+  function checkLove() {
+    let percent = Math.floor(Math.random() * 40) + 60;
+    document.getElementById("result").innerText =
+      "Compatibility: " + percent + "% 💖";
+    localStorage.setItem("loveScore", percent);
+  }
+
+  const saved = localStorage.getItem("loveScore");
+  if (saved) {
+    document.getElementById("result").innerText =
+      "Last Compatibility: " + saved + "% 💖";
+  }
+
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+  }
+
+  function copyInsta() {
+    navigator.clipboard.writeText("your_instagram_id");
+    alert("📋 Instagram username copied!");
+  }
+
+  let secret = "";
+  document.addEventListener("keydown", (e) => {
+    secret += e.key.toLowerCase();
+    if (secret.includes("love")) {
+      alert("💖 Secret unlocked: You are loved 💖");
+      secret = "";
+    }
+  });
+</script>
+
+</body>
+</html>
